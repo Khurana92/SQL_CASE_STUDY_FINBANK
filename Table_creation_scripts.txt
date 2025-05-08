@@ -1,0 +1,90 @@
+-- Drop tables if they exist
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS loans;
+DROP TABLE IF EXISTS customers;
+
+-- customers
+CREATE TABLE customers (
+  customer_id INT PRIMARY KEY,
+  name VARCHAR(100),
+  join_date DATE,
+  city VARCHAR(100)
+);
+
+-- accounts
+CREATE TABLE accounts (
+  account_id INT PRIMARY KEY,
+  customer_id INT,
+  account_type VARCHAR(50),
+  balance DECIMAL(12,2),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- transactions
+CREATE TABLE transactions (
+  txn_id INT PRIMARY KEY,
+  account_id INT,
+  txn_date DATE,
+  amount DECIMAL(12,2),
+  category VARCHAR(50),
+  FOREIGN KEY (account_id) REFERENCES accounts(account_id)
+);
+
+-- loans
+CREATE TABLE loans (
+  loan_id INT PRIMARY KEY,
+  customer_id INT,
+  loan_amount DECIMAL(12,2),
+  interest_rate DECIMAL(5,2),  -- percentage, e.g. 5.5%
+  start_date DATE,
+  status VARCHAR(50),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+
+--Data Insertion into Tables
+-- customers
+INSERT INTO customers VALUES 
+(1, 'Alice', '2022-01-10', 'New York'),
+(2, 'Bob', '2022-03-12', 'Chicago'),
+(3, 'Charlie', '2023-06-01', 'San Francisco'),
+(4, 'Varun','2021-03-12', 'Chicago'),
+(5, 'Saurabh', '2022-04-13','California'),
+(6, 'Vanshika', '2023-01-01', 'New Jersey'),
+(7, 'Roy', '2024-05-17','Chicago'),
+(8, 'Christina', '2023-04-11','New York'),
+(9, 'Daina', '2022-05-11','Arizona'),
+(10, 'Justin','2023-06-05','San Francisco');
+
+-- accounts
+INSERT INTO accounts VALUES 
+(101, 1, 'Savings', 5000),
+(102, 1, 'Checking', 1200),
+(103, 2, 'Savings', 2000),
+(104, 3, 'Checking', 3500),
+(105, 6, 'Savings', 4500),
+(106, 4, 'Checking', 3200),
+(107, 5, 'Savings', 4200),
+(108, 7, 'Savings', 6000),
+(109, 7, 'Checking', 2500),
+(110, 8, 'Checking', 2000);
+
+-- transactions
+INSERT INTO transactions VALUES 
+(1, 101, '2023-12-01', 500, 'Deposit'),
+(2, 101, '2024-01-10', -100, 'Withdrawal'),
+(3, 102, '2024-02-15', -200, 'Transfer'),
+(4, 104, '2024-02-20', 1000, 'Deposit'),
+(5, 104, '2024-03-01', -300, 'Loan Repayment'),
+(6, 103, '2024-02-05', 600, 'Deposit'),
+(7, 107, '2024-03-09', -200, 'Withdrawal'),
+(8, 110, '2024-01-01', -500, 'Loan Repayment'),
+(9, 108, '2024-05-08', 450, 'Deposit'),
+(10, 105, '2024-06-01', -350, 'Transfer');
+
+-- loans
+INSERT INTO loans VALUES 
+(1, 1, 10000, 5.5, '2023-01-01', 'Active'),
+(2, 2, 15000, 4.9, '2022-05-15', 'Closed'),
+(3, 3, 8000, 6.2, '2024-01-10', 'Active');
