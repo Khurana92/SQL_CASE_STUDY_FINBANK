@@ -24,7 +24,7 @@ Table_creation_scripts.sql – creates the schema and populates tables with dumm
 
 1. Show all customers and the number of accounts they hold.
  
-2.List all savings accounts with a balance greater than $2,000.
+2. List all savings accounts with a balance greater than $2,000.
 
 3.Show total deposits per account.
 
