@@ -12,53 +12,33 @@ FinBank is a fictional financial services provider. The goal is to analyze banki
 
 You can find the SQL scripts in:
 
-create_tables.sql – creates the schema
+Table_creation_scripts.sql – creates the schema and populates tables with dummy data
 
-insert_sample_data.sql – populates tables with dummy data
+🧠 Practice SQL Questions:
 
-🧠 Practice SQL Questions
 🔹 Beginner
-Show all customers and the number of accounts they hold.
-
-List all savings accounts with a balance greater than $2,000.
-
-Show total deposits per account.
-
-Find the total number of customers who joined in 2023 or later.
-
-Display all transactions made in February 2024.
+1. Show all customers and the number of accounts they hold.
+2.List all savings accounts with a balance greater than $2,000.
+3.Show total deposits per account.
+4.Find the total number of customers who joined in 2023 or later.
+5.Display all transactions made in February 2024.
 
 🔹 Intermediate
-Calculate total withdrawals per customer.
-
-Compute net transaction amount per customer.
-
-List active loans with expected annual interest.
-
-Rank customers by total loan amount.
-
-Show top 2 cities by average account balance.
+6.Calculate total withdrawals per customer.
+7.Compute net transaction amount per customer.
+8.List active loans with expected annual interest.
+9.Rank customers by total loan amount.
+10.Show top 2 cities by average account balance.
 
 🔹 Advanced
-Identify customers with both a loan and at least one account.
+11.Identify customers with both a loan and at least one account.
+12.Calculate monthly average transaction amount in Q1 2024.
+13.Flag accounts where withdrawals exceed deposits by 20%.
+14.Compute loan repayment rate per customer.
+15.Show cumulative transaction balance over time per account.
+16.List customers with more than one account, each over $1,000.
 
-Calculate monthly average transaction amount in Q1 2024.
-
-Flag accounts where withdrawals exceed deposits by 20%.
-
-Compute loan repayment rate per customer.
-
-Show cumulative transaction balance over time per account.
-
-List customers with more than one account, each over $1,000.
-
-🚀 How to Use
-Clone or fork the repo
-Run create_tables.sql to set up schema
-Run insert_sample_data.sql to populate data
-Open your SQL client and start solving the questions
-
-🎯 Learning Goals
-Master SQL joins, grouping, filtering, and window functions
-Learn to write business-focused financial queries
-Develop data storytelling with query output
+🎯 Learning Goals:
+--> Master SQL joins, grouping, filtering, and window functions
+--> Learn to write business-focused financial queries
+--> Develop data storytelling with query output
